@@ -32,22 +32,6 @@ for file in files_path:
                         destination = os.path.join("D:\\" , category,file)
                         print(destination)
                         moving = sh.move(src,destination)
-                        
-                        
-                
-                
-                
-                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+    
+
+            
