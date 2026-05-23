@@ -1,12 +1,13 @@
 import os 
 import shutil as sh
+import time 
 
 path = r'C:\Users\parve\Downloads'
 files_path = os.listdir(path)
 d = "D:"
 d_path = os.listdir(d)
-print(d_path)
-
+checking = os.path.getsize(d)
+print(checking)
 
 file_name_dictionary = {
     "PDF" : [".pdf"],
@@ -26,12 +27,17 @@ for file in files_path:
     for category , ext_list in file_name_dictionary.items():
         for ext in ext_list:
             if Extension == ext:
+                print("Extension Matched !")
                 src = os.path.join(path,file)
                 for folder in d_path:
                     if folder == category :
                         destination = os.path.join("D:\\" , category,file)
-                        print(destination)
+                        checking = os.path.exists(destination)
+                        time.sleep(3)
+                        print("Files Moved in few Seconds !")
                         moving = sh.move(src,destination)
+                        print("your files are moved from another folder !")
+                        
     
 
             
