@@ -4,10 +4,7 @@ import time
 
 path = r'C:\Users\parve\Downloads'
 files_path = os.listdir(path)
-d = "D:"
-d_path = os.listdir(d)
-checking = os.path.getsize(d)
-print(checking)
+D_path = os.listdir("D:")
 
 file_name_dictionary = {
     "PDF" : [".pdf"],
@@ -29,7 +26,7 @@ for file in files_path:
             if Extension == ext:
                 print("Extension Matched !")
                 src = os.path.join(path,file)
-                for folder in d_path:
+                for folder in D_path:
                     if folder == category :
                         destination = os.path.join("D:\\" , category,file)
                         checking = os.path.exists(destination)
@@ -38,6 +35,4 @@ for file in files_path:
                         moving = sh.move(src,destination)
                         print("your files are moved from another folder !")
                         
-    
-
-            
+print("organizer have ran successfully !")         
